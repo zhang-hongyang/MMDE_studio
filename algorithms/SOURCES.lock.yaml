@@ -1,0 +1,26 @@
+# Upstream source pins used by the GPU deployment.  Repositories themselves
+# live on the compute node; this small manifest stays with the portable code.
+generated_at: 2026-09-22T15:40:00+08:00
+sources:
+  moge3:
+    repository: https://github.com/microsoft/MoGe.git
+    commit: 74fbce054ebed49800de42d0ad0e83495065719a
+    license: MIT
+  mapanything:
+    repository: https://github.com/facebookresearch/map-anything.git
+    commit: 3d10cf7a3016fc0f9bb13a071ee66c47b10be0d9
+    license: Apache-2.0
+    model_license: CC-BY-NC-4.0
+  lingbot_map:
+    repository: https://github.com/Robbyant/lingbot-map.git
+    commit: 849e690bb086103637e44b1e91878d9d43a8bf0c
+    license: Apache-2.0
+  ptc_depth:
+    repository: https://github.com/ajou-arrl/ptc-depth.git
+    commit: 6f071370396bf2fd50b4bd6815f0a5012b06e119
+    license: BSD-3-Clause
+  mtd:
+    repository: https://github.com/HenryMaxixi/MTD.git
+    commit: fffa291466c52c5db4baf38ff011c1352dbe6dd3
+    depth_anything_v2_commit: a561b849ebae10a6f5ef49e26c83cbbcd36c71bf
+    license: MIT

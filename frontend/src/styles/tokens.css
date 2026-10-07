@@ -1,0 +1,38 @@
+/* MMDE Studio design tokens — three-layer architecture.
+ * Layer 1 (this file): raw CSS variables, dark-first dual theme.
+ * Layer 2: @theme mapping in global.css (Tailwind v4).
+ * Layer 3: component classes — never raw hex outside this file.
+ */
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --card-2: #f1f5f9;
+  --border: #e2e8f0;
+  --fg: #0f172a;
+  --fg-muted: #64748b;
+  --primary: #1d4ed8;
+  --on-primary: #ffffff;
+  --accent: #b45309;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --ring: rgba(59, 130, 246, 0.45);
+}
+
+:root.dark {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --card: #111a2c;
+  --card-2: #0e1626;
+  --border: #1f2a44;
+  --fg: #e6edf7;
+  --fg-muted: #8b98ad;
+  --primary: #3b82f6;
+  --on-primary: #ffffff;
+  --accent: #d97706;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --ring: rgba(59, 130, 246, 0.45);
+}

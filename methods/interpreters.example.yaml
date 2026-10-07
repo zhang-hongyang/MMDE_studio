@@ -1,0 +1,9 @@
+# Copy this file to methods/interpreters.yaml and replace each value with the
+# Python interpreter of the matching method on the current machine.
+marigold_v2: /path/to/mmde-marigold/bin/python
+moge3: /path/to/mmde-moge3/bin/python
+mapanything: /path/to/mmde-mapanything/bin/python
+lingbot_map: /path/to/mmde-lingbot/bin/python
+temporal: /path/to/mmde-temporal/bin/python
+unidepth_v2: /path/to/unidepth-v2/bin/python
+manydepth2_vel: /path/to/manydepth2-vel/bin/python

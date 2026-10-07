@@ -1,0 +1,46 @@
+# MMDE-Studio dataset registry.
+# MMDE_STUDIO_DATASETS env var (or --config) can point to an alternative file.
+#
+# This deployment hosts the lunar_nac demo dataset (20 LROC NAC regions with
+# DAV2/Marigold predictions, built by scripts/prepare_lunar_dataset.py). The
+# four vehicle datasets below stay registered for portability; they are
+# skipped with a warning wherever /home/data2 is not mounted.
+summary_path: /home/research/code/MMDE_studio/data/mmde_result/summary.json
+
+datasets:
+  lunar_nac:
+    platform: satellite
+    title: Lunar NAC 20 区域
+    test_root: /home/research/code/MMDE_studio/data/mmde_test/lunar_nac
+    pred_root: /home/research/code/MMDE_studio/data/mmde_result/preds/lunar_nac
+    metrics_root: /home/research/code/MMDE_studio/data/mmde_result/metrics/lunar_nac
+    scene_root: /home/research/code/MMDE_studio/data/mmde_scene/lunar_nac
+  carizon:
+    platform: vehicle
+    title: Carizon OEM
+    test_root: /home/data2/mmde_test/carizon
+    pred_root: /home/data2/mmde_result/preds/carizon
+    metrics_root: /home/data2/mmde_result/metrics/carizon
+    scene_root: /home/MMDE/data_scene/carizon
+    calib_protocols: [seq, feye]
+  carizon_ccar:
+    platform: vehicle
+    title: Carizon CCAR
+    test_root: /home/data2/mmde_test/carizon_ccar
+    pred_root: /home/data2/mmde_result/preds/carizon_ccar
+    metrics_root: /home/data2/mmde_result/metrics/carizon_ccar
+    scene_root: /home/MMDE/data_scene/carizon_ccar
+  kitti:
+    platform: vehicle
+    title: KITTI
+    test_root: /home/data2/mmde_test/kitti
+    pred_root: /home/data2/mmde_result/preds/kitti
+    metrics_root: /home/data2/mmde_result/metrics/kitti
+    scene_root: /home/MMDE/data_scene/kitti
+  nuscenes:
+    platform: vehicle
+    title: nuScenes
+    test_root: /home/data2/mmde_test/nuscenes
+    pred_root: /home/data2/mmde_result/preds/nuscenes
+    metrics_root: /home/data2/mmde_result/metrics/nuscenes
+    scene_root: /home/MMDE/data_scene/nuscenes

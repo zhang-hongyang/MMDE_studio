@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/.cache/
+algorithms/.venv_*/
+**/*.egg-info/
+.venv/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Machine-local configuration and runtime data
+methods/interpreters.yaml
+data/
+deploy/
+mmde_test/
+mmde_result/
+mmde_scene/
+runs/
+
+# Model weights and generated arrays
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.npy
+
+# Research documents and local pilot inputs (paper materials live elsewhere)
+lunar_eval/*.pdf
+lunar_eval/*.docx
+lunar_eval/pilot_inputs/
+
+# Misc
+*.log
+.DS_Store

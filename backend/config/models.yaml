@@ -1,0 +1,43 @@
+# 模型分类规则：驱动 Web 端模型下拉框的分组显示。
+# excluded 的模型（相对深度及其变体）不在 Web 端显示；
+# categories 按声明顺序首个命中，"*" 为通配（支持前缀/后缀，如 "mtd_*"、"dav2_rel*"）。
+# 新增模型族时在此追加规则即可，无需改代码。
+excluded:
+  - dav2_rel*        # 相对深度（DAv2）及其速度/标定变体
+  - zipdepth*        # 相对深度（ZipDepth）及其标定变体
+  - gemdepth*        # 相对深度（GemDepth）及其标定变体
+categories:
+  - id: mtd
+    label: MTD
+    match: ["mtd", "mtd_*"]
+  - id: zs_dav2
+    label: DAV2 零样本
+    match: ["dav2_small*"]
+  - id: zs_marigold
+    label: Marigold 零样本
+    match: ["marigold_*"]
+  - id: ptc
+    label: PTC
+    match: ["ptc_*"]
+  - id: tta
+    label: TTA
+    match: ["tta_*"]
+  - id: feedforward
+    label: 前馈式
+    match:
+      - mapanything
+      - mapanything_*
+      - lingbot_map
+      - amb3r_*
+  - id: metric
+    label: 度量模型
+    match:
+      - dav2_metric
+      - metric3d
+      - unidepth_v2
+      - moge2
+      - moge3
+      - manydepth2_vel
+  - id: other
+    label: 其他
+    match: ["*"]

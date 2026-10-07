@@ -1,0 +1,13 @@
+# MMDE-Studio backend runtime dependencies (Python >= 3.10)
+# Viewer/data-serving only — the task system additionally needs whatever the
+# inference methods require (torch etc., see docs/PORTABLE.md).
+fastapi>=0.110
+uvicorn[standard]>=0.29
+numpy>=1.24
+opencv-python-headless>=4.8
+scipy>=1.10
+PyYAML>=6.0
+
+# test-only:
+#   pytest
+#   httpx            (fastapi TestClient)

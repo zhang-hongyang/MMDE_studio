@@ -1,0 +1,76 @@
+{
+    "_comment": "KITTI Depth Completion — official val_selection_cropped evaluation",
+
+    "model": {
+        "encoder": "vitl",
+        "checkpoint": "checkpoints/depth_anything_v2_vitl.pth",
+        "input_size": 518
+    },
+
+    "dataset": {
+        "type": "kitti_dc",
+        "data_path": "data/kitti/val_selection_cropped",
+        "remove_outliers": true,
+        "do_flip": false
+    },
+
+    "algorithm": {
+        "min_depth": 2.0,
+        "max_depth": 78.0,
+
+        "segmentation": {
+            "method": "felzenszwalb",
+            "scale": 50,
+            "sigma": 0.3,
+            "min_size": 50,
+            "fast_slic": {
+                "num_components": 1600,
+                "compactness": 10,
+                "use_avx2": true,
+                "min_size_factor": 0
+            }
+        },
+
+        "segment_backend": "numpy",
+        "_comment_segment_backend": "Segment-fitting backend: 'torch' (parallel GPU, recommended) or 'numpy' (sklearn OLS, matches original benchmark code exactly).",
+
+        "segment_fitting": {
+            "min_count": 3
+        },
+
+        "use_segment_propagation": true,
+        "use_params_propagation": false,
+        "_comment_propagation": "Build k-NN segment graph and propagate scale T to segments with no sparse coverage. When false, falls back to a global median-ratio estimate.",
+        "propagation": {
+            "k_neighbors": 4
+        },
+
+        "bilateral_filter": {
+            "iterations": 1,
+            "spatial_sigma": 0.05,
+            "color_sigma": 0.001,
+            "kernel_size": 7,
+            "use_anchor": true,
+            "_comment_use_anchor": "When true, LiDAR-fitted a/b pixels stay fixed during RBF; false = smooth from source_mask only."
+        },
+
+        "use_dadp": true,
+        "_comment_dadp": "Enable Discontinuity-Aware Dynamic Programming refinement.",
+
+        "dadp_variant": "torch_dadp",
+        "_comment_dadp_variant": [
+            "torch_dadp  — Taylor-expansion candidate interpolation, GPU (default).",
+            "numpy_dadp  — Single-pass CPU numpy implementation (slower)."
+        ],
+
+        "dadp": {
+            "iterations": 1,
+            "_comment_iterations": "torch_bspline benefits from more iterations (3–5); torch_taylor is stable at 1.",
+            "seed_energy": -10.0
+        }
+    },
+
+    "output": {
+        "print_every": 100
+    }
+}

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Outputs & data (not shipped)
+output/
+data/
+
+# Local development / benchmark scripts (not part of the release)
+1_t_2.py
+
+# Depth-Anything-V2 weights (download via script)
+third_party/Depth-Anything-V2/checkpoints/*.pth
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

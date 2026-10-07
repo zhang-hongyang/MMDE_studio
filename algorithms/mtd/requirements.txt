@@ -1,0 +1,15 @@
+# Core (aligned with Depth-Anything-V2)
+torch
+torchvision
+opencv-python
+matplotlib
+
+# This project
+numpy
+Pillow
+scikit-image
+scikit-learn
+
+# Optional superpixel backends (install only if used in config)
+fast_slic
+opencv-contrib-python
